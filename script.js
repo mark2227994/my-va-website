@@ -41,8 +41,7 @@ const setTheme = (mode) => {
 };
 
 const savedTheme = localStorage.getItem("theme");
-const systemPrefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-setTheme(savedTheme || (systemPrefersLight ? "light" : "dark"));
+setTheme(savedTheme || "dark");
 
 themeToggle.addEventListener("click", () => {
   const isLight = document.body.classList.contains("theme-light");

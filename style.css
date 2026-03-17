@@ -283,6 +283,11 @@ body.theme-light .nav {
   align-items: center;
 }
 
+.hero-mobile {
+  display: none;
+  text-align: left;
+}
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -1565,6 +1570,22 @@ textarea,
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .nav-inner {
+    gap: 12px;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+
+  .hero-card {
+    order: 2;
+  }
+
+  .hero-content {
+    order: 1;
+  }
 }
 
 @media (max-width: 520px) {
@@ -1572,13 +1593,42 @@ textarea,
     padding: 80px 0;
   }
 
+  .hero {
+    padding-top: 110px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-grid {
+    display: none;
+  }
+
+  .hero-mobile {
+    display: grid;
+    gap: 18px;
+  }
+
   .hero-stats {
     grid-template-columns: 1fr;
   }
 
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .urgency-badge,
+  .hero-badge {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
   .whatsapp {
-    right: 16px;
-    bottom: 16px;
+    right: 12px;
+    bottom: 12px;
   }
 
   .price-card.featured {
@@ -1590,7 +1640,12 @@ textarea,
   }
 
   .comparison-row {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .comparison-row span {
+    display: block;
   }
 
   .sticky-inner {
@@ -1604,18 +1659,57 @@ textarea,
     align-items: flex-start;
   }
 
+  .pricing-toggle {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toggle-pill {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-card,
+  .panel,
+  .card,
+  .portfolio-card,
+  .highlight-card,
+  .price-card,
+  .booking-frame,
+  .roi-result {
+    padding: 20px;
+  }
+
+  .micro-cta,
+  .priority-cta {
+    padding: 16px;
+  }
+
+  .roi .split {
+    gap: 24px;
+  }
+
+  .roi-value {
+    font-size: 2.1rem;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .quick-ctas {
     grid-template-columns: 1fr;
   }
 
   .spin-cta {
     left: 12px;
-    bottom: 140px;
+    bottom: 150px;
   }
 
   .egg-cta {
     right: 12px;
-    bottom: 160px;
+    bottom: 170px;
   }
 }
 
