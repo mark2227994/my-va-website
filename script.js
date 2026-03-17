@@ -4,18 +4,48 @@ const navLinks = document.querySelectorAll(".nav-mobile a, .nav-links a");
 const themeToggle = document.getElementById("themeToggle");
 const nav = document.querySelector(".nav");
 const stickyCta = document.getElementById("stickyCta");
+const menuBackdrop = document.getElementById("menuBackdrop");
+
+const openMenu = () => {
+  navMobile.hidden = false;
+  menuBackdrop.hidden = false;
+  requestAnimationFrame(() => {
+    navMobile.classList.add("open");
+    menuBackdrop.classList.add("visible");
+  });
+  navToggle.setAttribute("aria-expanded", "true");
+};
+
+const closeMenu = () => {
+  navMobile.classList.remove("open");
+  menuBackdrop.classList.remove("visible");
+  navToggle.setAttribute("aria-expanded", "false");
+  setTimeout(() => {
+    navMobile.hidden = true;
+    menuBackdrop.hidden = true;
+  }, 350);
+};
 
 navToggle.addEventListener("click", () => {
   const isOpen = navToggle.getAttribute("aria-expanded") === "true";
-  navToggle.setAttribute("aria-expanded", String(!isOpen));
-  navMobile.hidden = isOpen;
+  if (isOpen) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
 });
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
-    navMobile.hidden = true;
-    navToggle.setAttribute("aria-expanded", "false");
+    closeMenu();
   });
+});
+
+menuBackdrop.addEventListener("click", closeMenu);
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeMenu();
+  }
 });
 
 const updateNav = () => {
@@ -571,3 +601,4 @@ const syncTrustNote = () => {
 
 syncTrustNote();
 window.addEventListener("resize", syncTrustNote);
+
