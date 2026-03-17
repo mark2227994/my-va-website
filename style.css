@@ -1742,6 +1742,28 @@ textarea,
 }
 
 @media (max-width: 700px) {
+  .orb {
+    animation-duration: 8s;
+  }
+
+  .trust-track {
+    animation-duration: 10s;
+  }
+
+  .reveal {
+    transition-duration: 0.4s;
+  }
+
+  .glass:hover {
+    transform: translateY(-4px);
+  }
+
+  .btn.glow:hover {
+    transform: translateY(-3px);
+  }
+}
+
+@media (max-width: 700px) {
   .trust-note summary {
     display: block;
   }

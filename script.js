@@ -344,13 +344,15 @@ const applyStickyCopy = (variant) => {
   }, 400);
 };
 
+const isMobile = window.matchMedia("(max-width: 700px)").matches;
+
 if (stickyHeadline && stickySubhead) {
   let variantIndex = Math.floor(Math.random() * stickyVariants.length);
   applyStickyCopy(stickyVariants[variantIndex]);
   setInterval(() => {
     variantIndex = (variantIndex + 1) % stickyVariants.length;
     applyStickyCopy(stickyVariants[variantIndex]);
-  }, 7000);
+  }, isMobile ? 5500 : 7000);
 }
 
 if (surpriseCta && surpriseClose) {
@@ -541,7 +543,7 @@ if (typingText && !prefersReducedMotion) {
       typingText.textContent = phrase.slice(0, charIndex);
       if (charIndex >= phrase.length) {
         deleting = true;
-        setTimeout(typeLoop, 900);
+        setTimeout(typeLoop, isMobile ? 650 : 900);
         return;
       }
     } else {
@@ -552,7 +554,7 @@ if (typingText && !prefersReducedMotion) {
         phraseIndex = (phraseIndex + 1) % queuePhrases.length;
       }
     }
-    setTimeout(typeLoop, deleting ? 35 : 55);
+    setTimeout(typeLoop, deleting ? (isMobile ? 28 : 35) : (isMobile ? 45 : 55));
   };
 
   typeLoop();
