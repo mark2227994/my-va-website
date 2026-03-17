@@ -1,0 +1,722 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kelvin Mark — Luxury Virtual Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Animated background layers -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div id="spotlight" aria-hidden="true"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="bg-orbs" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
+  <!-- Navigation -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="logo">Kelvin<span>Mark</span></div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#booking">Booking</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">Theme</button>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+    <div class="nav-mobile" hidden>
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#booking">Booking</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow">Luxury Virtual Assistant</p>
+          <div class="hero-badge">Premium Ops Partner • Built for Founders</div>
+          <h1>I Help Busy Entrepreneurs Save 10+ Hours Weekly</h1>
+          <p class="lead">
+            Kelvin Mark delivers high-touch executive support—streamlining inboxes,
+            calendars, research, and client operations with precision and discretion.
+          </p>
+          <div class="hero-actions">
+            <a class="btn glow" href="#booking">Book a Call</a>
+            <a class="btn ghost" href="#pricing">Hire Me Now</a>
+            <a class="btn outline" href="https://wa.me/254711222572" target="_blank" rel="noopener">WhatsApp Me</a>
+          </div>
+          <div class="urgency-badge glass">Only 3 client slots available this month</div>
+          <div class="hero-stats">
+            <div>
+              <h3>10+ hrs</h3>
+              <p>Saved weekly</p>
+            </div>
+            <div>
+              <h3>98%</h3>
+              <p>Client satisfaction</p>
+            </div>
+            <div>
+              <h3>24/7</h3>
+              <p>Support windows</p>
+            </div>
+          </div>
+          <div class="live-queue glass" aria-live="polite">
+            <div class="queue-title">Live Queue • Now Processing</div>
+            <div class="typing" id="typingText">Drafting executive briefing...</div>
+          </div>
+        </div>
+        <div class="hero-card glass">
+          <div class="hero-card-inner">
+            <h2>Executive Support Suite</h2>
+            <p>Premium operations, client care, and systems designed for growth.</p>
+            <ul>
+              <li>Inbox & calendar mastery</li>
+              <li>Client onboarding & retention</li>
+              <li>Research & competitor intel</li>
+              <li>Project ops & reporting</li>
+            </ul>
+            <div class="hero-mini">
+              <div class="chip">Confidential</div>
+              <div class="chip">Proactive</div>
+              <div class="chip">Refined</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="section trust">
+      <div class="container trust-inner">
+        <p class="trust-label">Trusted by founders, agencies, and boutique teams</p>
+        <div class="trust-marquee" aria-label="Trusted by logos">
+          <div class="trust-track">
+            <span>Northline</span>
+            <span>Verve Studio</span>
+            <span>Summit Labs</span>
+            <span>Atlas & Co.</span>
+            <span>Elevate</span>
+            <span>Northline</span>
+            <span>Verve Studio</span>
+            <span>Summit Labs</span>
+            <span>Atlas & Co.</span>
+            <span>Elevate</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTCOMES -->
+    <section id="outcomes" class="section outcomes">
+      <div class="container">
+        <div class="section-title">
+          <h2>Elite Results, Delivered Quietly</h2>
+          <p>Structured support systems that keep your brand fast, calm, and consistent.</p>
+        </div>
+        <div class="kpi-grid">
+          <div class="kpi glass">
+            <div class="ring" data-progress="92">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="ring-bg" cx="60" cy="60" r="50"></circle>
+                <circle class="ring-progress" cx="60" cy="60" r="50"></circle>
+              </svg>
+              <div class="ring-value"><span class="counter" data-target="10">0</span>+ hrs</div>
+            </div>
+            <p>Weekly time saved</p>
+          </div>
+          <div class="kpi glass">
+            <div class="ring" data-progress="98">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="ring-bg" cx="60" cy="60" r="50"></circle>
+                <circle class="ring-progress" cx="60" cy="60" r="50"></circle>
+              </svg>
+              <div class="ring-value"><span class="counter" data-target="98">0</span>%</div>
+            </div>
+            <p>Client satisfaction</p>
+          </div>
+          <div class="kpi glass">
+            <div class="ring" data-progress="84">
+              <svg viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="ring-bg" cx="60" cy="60" r="50"></circle>
+                <circle class="ring-progress" cx="60" cy="60" r="50"></circle>
+              </svg>
+              <div class="ring-value"><span class="counter" data-target="24">0</span>/7</div>
+            </div>
+            <p>Support windows</p>
+          </div>
+        </div>
+        <div class="grid-3">
+          <article class="card glass">
+            <h3>Strategic Focus</h3>
+            <p>Kelvin handles the noise so you can drive revenue and vision.</p>
+          </article>
+          <article class="card glass">
+            <h3>Operational Clarity</h3>
+            <p>Weekly reporting, dashboard updates, and zero missed deadlines.</p>
+          </article>
+          <article class="card glass">
+            <h3>Premium Client Care</h3>
+            <p>High-touch responses that feel polished and immediate.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container split">
+        <div class="glass panel">
+          <h2>About Kelvin</h2>
+          <p>
+            Kelvin Mark is a detail-obsessed, client-first virtual assistant who blends
+            executive-level organization with a warm, approachable tone. Every task is
+            handled with care—whether it’s coordinating VIP calendars, managing inboxes,
+            or preparing decision-ready research.
+          </p>
+          <p>
+            Expect white-glove service, refined communication, and a trusted partner who
+            elevates your brand experience while giving you back your time.
+          </p>
+        </div>
+        <div class="about-highlights">
+          <div class="highlight-card glass">
+            <h3>White-Glove Support</h3>
+            <p>Luxury-grade assistance aligned with your brand’s voice.</p>
+          </div>
+          <div class="highlight-card glass">
+            <h3>Systems-First</h3>
+            <p>SOPs, automations, and dashboards that scale with you.</p>
+          </div>
+          <div class="highlight-card glass">
+            <h3>Discreet & Trusted</h3>
+            <p>Confidential workflows and clean execution every time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>Premium support tailored to founders, executives, and modern teams.</p>
+        </div>
+        <div class="micro-cta glass">
+          <div>
+            <strong>Want a 60-second inbox triage demo?</strong>
+            <span>See how Kelvin handles your emails with precision.</span>
+          </div>
+          <a class="btn outline" href="#booking">Request Demo</a>
+        </div>
+        <div class="grid-3">
+          <article class="card glass">
+            <div class="icon">✉️</div>
+            <h3>Email Management</h3>
+            <p>Inbox triage, templates, and fast response workflows.</p>
+          </article>
+          <article class="card glass">
+            <div class="icon">📅</div>
+            <h3>Calendar Scheduling</h3>
+            <p>Meeting coordination, prep briefs, and time-blocking.</p>
+          </article>
+          <article class="card glass">
+            <div class="icon">🔍</div>
+            <h3>Internet Research</h3>
+            <p>Market scans, competitor analysis, and insight reports.</p>
+          </article>
+          <article class="card glass">
+            <div class="icon">📣</div>
+            <h3>Social Media Management</h3>
+            <p>Content planning, scheduling, and brand-aligned engagement.</p>
+          </article>
+          <article class="card glass">
+            <div class="icon">💬</div>
+            <h3>Customer Support</h3>
+            <p>High-touch client responses with premium tone and care.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <p>Results that reflect precision, clarity, and client trust.</p>
+        </div>
+        <div class="grid-3">
+          <div class="portfolio-card glass">
+            <div class="portfolio-media">
+              <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Executive dashboards" />
+            </div>
+            <h3>Founder Inbox Overhaul</h3>
+            <p>Cut response time by 65% through filters and smart templates.</p>
+          </div>
+          <div class="portfolio-card glass">
+            <div class="portfolio-media">
+              <img src="https://images.unsplash.com/photo-1485217988980-11786ced9454?auto=format&fit=crop&w=600&q=80" alt="Luxury launch" />
+            </div>
+            <h3>Luxury Brand Launch</h3>
+            <p>Managed stakeholders and operations for a flagship launch.</p>
+          </div>
+          <div class="portfolio-card glass">
+            <div class="portfolio-media">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Research reports" />
+            </div>
+            <h3>Research & Intelligence</h3>
+            <p>Delivered weekly market insights for a fintech team.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Testimonials</h2>
+          <p>Calm, capable, and always two steps ahead.</p>
+        </div>
+        <div class="grid-3">
+          <figure class="card glass">
+            <blockquote>
+              “Kelvin transformed my inbox. I finally feel in control of my week.”
+            </blockquote>
+            <figcaption>— CEO, Luxury Consulting</figcaption>
+          </figure>
+          <figure class="card glass">
+            <blockquote>
+              “Professional, discreet, and always proactive with details.”
+            </blockquote>
+            <figcaption>— Founder, Creative Studio</figcaption>
+          </figure>
+          <figure class="card glass">
+            <blockquote>
+              “The client experience is now premium and frictionless.”
+            </blockquote>
+            <figcaption>— COO, Wellness Brand</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Pricing</h2>
+          <p>Flexible options designed for high-performance founders.</p>
+        </div>
+        <div class="pricing-toggle" role="tablist" aria-label="Pricing cadence">
+          <button class="toggle-pill active" data-mode="monthly" aria-selected="true">Monthly</button>
+          <button class="toggle-pill" data-mode="quarterly" aria-selected="false">Quarterly <strong>(Save 12%)</strong></button>
+          <button class="toggle-pill" data-mode="yearly" aria-selected="false">Yearly <strong>(Save 20%)</strong></button>
+        </div>
+        <div class="grid-3">
+          <article class="card glass price-card" data-plan="starter">
+            <h3>Starter</h3>
+            <p class="price" data-monthly="200" data-quarterly="528" data-yearly="1920">$200<span>/mo</span></p>
+            <ul>
+              <li>10 hours support</li>
+              <li>Inbox + calendar</li>
+              <li>Weekly reporting</li>
+            </ul>
+            <a class="btn ghost" href="#contact">Choose Starter</a>
+          </article>
+          <article class="card glass price-card featured" data-plan="standard">
+            <div class="badge">Best Value</div>
+            <h3>Standard</h3>
+            <p class="price" data-monthly="480" data-quarterly="1267" data-yearly="4608">$480<span>/mo</span></p>
+            <ul>
+              <li>25 hours support</li>
+              <li>Client onboarding</li>
+              <li>Priority response</li>
+            </ul>
+            <a class="btn glow" href="#contact">Choose Standard</a>
+          </article>
+          <article class="card glass price-card" data-plan="premium">
+            <h3>Premium</h3>
+            <p class="price" data-monthly="1000" data-quarterly="2640" data-yearly="9600">$1000<span>/mo</span></p>
+            <ul>
+              <li>50 hours support</li>
+              <li>Dedicated availability</li>
+              <li>Systems + automation</li>
+            </ul>
+            <a class="btn ghost" href="#contact">Choose Premium</a>
+          </article>
+        </div>
+        <div class="comparison glass">
+          <h3>Plan Comparison</h3>
+          <div class="comparison-table">
+            <div class="comparison-row header">
+              <span>Features</span>
+              <span>Starter</span>
+              <span>Standard</span>
+              <span>Premium</span>
+            </div>
+            <div class="comparison-row">
+              <span>Weekly Hours</span>
+              <span>10</span>
+              <span>25</span>
+              <span>50</span>
+            </div>
+            <div class="comparison-row">
+              <span>Inbox + Calendar</span>
+              <span>✓</span>
+              <span>✓</span>
+              <span>✓</span>
+            </div>
+            <div class="comparison-row">
+              <span>Client Onboarding</span>
+              <span>—</span>
+              <span>✓</span>
+              <span>✓</span>
+            </div>
+            <div class="comparison-row">
+              <span>Priority Response</span>
+              <span>—</span>
+              <span>✓</span>
+              <span>✓</span>
+            </div>
+            <div class="comparison-row">
+              <span>Systems + Automation</span>
+              <span>—</span>
+              <span>—</span>
+              <span>✓</span>
+            </div>
+          </div>
+        </div>
+        <div class="priority-cta glass">
+          <div>
+            <strong>Priority Pass</strong>
+            <p>Skip the waitlist and onboard within 48 hours.</p>
+          </div>
+          <a class="btn glow" href="#booking">Claim Priority</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI CALCULATOR -->
+    <section id="roi" class="section roi">
+      <div class="container split">
+        <div class="glass panel">
+          <h2>ROI Calculator</h2>
+          <p>Estimate the value of time Kelvin saves for you every month.</p>
+          <div class="roi-form">
+            <label>
+              Hours saved per week
+              <input type="number" id="roiHours" value="10" min="1" max="80" />
+            </label>
+            <label>
+              Your hourly value ($)
+              <input type="number" id="roiRate" value="80" min="10" max="1000" />
+            </label>
+            <label>
+              Weeks per month
+              <input type="number" id="roiWeeks" value="4" min="1" max="5" />
+            </label>
+            <label>
+              Plan (cost included)
+              <select id="roiPlan">
+                <option value="starter">Starter</option>
+                <option value="standard" selected>Standard</option>
+                <option value="premium">Premium</option>
+              </select>
+            </label>
+            <button class="btn glow" id="roiCalc" type="button">Calculate ROI</button>
+          </div>
+        </div>
+        <div class="glass panel roi-result">
+          <h3>Estimated Monthly Value</h3>
+          <p class="roi-value" id="roiValue">$3,200</p>
+          <p class="roi-net" id="roiNet">$2,720 net after plan cost</p>
+          <div class="roi-meter">
+            <div class="meter-labels">
+              <span>Confidence Meter <button class="tooltip" aria-label="Confidence score info" type="button">i
+                <span class="tooltip-text">Confidence is based on net ROI compared to plan cost. Higher net ROI vs. cost increases the score.</span>
+              </button></span>
+              <span id="roiConfidence">High</span>
+            </div>
+            <div class="meter-track">
+              <div class="meter-fill" id="roiMeterFill"></div>
+            </div>
+          </div>
+          <p class="muted">Based on the inputs, this is the time value Kelvin unlocks each month.</p>
+          <div class="roi-note">
+            <strong>Tip:</strong> Most founders reinvest this time into sales, strategy, or product.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="section how">
+      <div class="container">
+        <div class="section-title">
+          <h2>How It Works</h2>
+          <p>Clear, product-style onboarding that gets you from chaos to calm.</p>
+        </div>
+        <div class="tabs">
+          <div class="tab-buttons" role="tablist" aria-label="How it works steps">
+            <button class="tab-btn active" role="tab" aria-selected="true" data-tab="tab-1">1. Audit</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="tab-2">2. Build</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="tab-3">3. Scale</button>
+          </div>
+          <div class="tab-panels">
+            <div class="tab-panel active glass" id="tab-1" role="tabpanel">
+              <h3>Deep Workflow Audit</h3>
+              <p>We map your inbox, calendar, and projects to identify bottlenecks and quick wins.</p>
+              <ul>
+                <li>Executive intake call</li>
+                <li>Access + systems review</li>
+                <li>Priority roadmap</li>
+              </ul>
+            </div>
+            <div class="tab-panel glass" id="tab-2" role="tabpanel">
+              <h3>Premium Operations Build</h3>
+              <p>Kelvin implements SOPs, templates, and reporting to keep every deliverable clean.</p>
+              <ul>
+                <li>Inbox rules + templates</li>
+                <li>Calendar & scheduling system</li>
+                <li>Client success workflows</li>
+              </ul>
+            </div>
+            <div class="tab-panel glass" id="tab-3" role="tabpanel">
+              <h3>Scale With Confidence</h3>
+              <p>Ongoing optimization, support coverage, and KPI reporting for growth.</p>
+              <ul>
+                <li>Weekly performance check-ins</li>
+                <li>Process optimization</li>
+                <li>Growth-ready support</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section id="booking" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Booking</h2>
+          <p>Secure a private call with Kelvin Mark.</p>
+        </div>
+        <div class="glass booking-frame">
+          <iframe
+            title="Calendly booking"
+            src="https://calendly.com/kelvinmark/30min"
+            frameborder="0"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCAM ALERT -->
+    <section id="safety" class="section safety">
+      <div class="container split">
+        <div class="glass panel">
+          <h2>Scam Alert</h2>
+          <p>
+            Kelvin Mark only communicates through official channels. If you receive
+            requests for payments, account access, or sensitive data from anyone else,
+            it is not Kelvin.
+          </p>
+          <div class="scam-examples">
+            <h4>Common scam examples</h4>
+            <ul class="safety-list">
+              <li>“Please pay via crypto to secure your slot.”</li>
+              <li>“Send your login credentials so I can start immediately.”</li>
+              <li>“Wire funds to a new bank account I just shared.”</li>
+              <li>“Use this personal Gmail address instead of the official one.”</li>
+            </ul>
+          </div>
+          <div class="never-ask">
+            <h4>Kelvin will never ask for</h4>
+            <ul class="safety-list">
+              <li>Your passwords or 2FA codes</li>
+              <li>Payment via personal crypto wallets</li>
+              <li>Unverified links or attachments</li>
+              <li>Upfront fees without a written agreement</li>
+            </ul>
+          </div>
+          <ul class="safety-list">
+            <li>Official email: kelvinmark.va@gmail.com</li>
+            <li>Official WhatsApp: +254711222572</li>
+            <li>Payments are confirmed after a written agreement</li>
+          </ul>
+        </div>
+        <div class="glass panel safety-card">
+          <h3>Protect Yourself</h3>
+          <p>Before sharing information, verify the sender and confirm via WhatsApp or email.</p>
+          <a class="btn ghost" href="#contact">Report a Suspicious Message</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container split">
+        <div class="glass panel">
+          <h2>Let’s Build Your Support System</h2>
+          <p>Reach out and Kelvin will respond within 24 hours.</p>
+          <div class="contact-details">
+            <div>
+              <h4>Email</h4>
+              <p>kelvinmark.va@gmail.com</p>
+            </div>
+            <div>
+              <h4>WhatsApp</h4>
+              <p>+254711222572</p>
+            </div>
+          </div>
+        </div>
+        <form class="glass form" aria-label="Contact form">
+          <label>
+            Full Name
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+          <label>
+            Email Address
+            <input type="email" name="email" placeholder="you@email.com" required />
+          </label>
+          <label>
+            How can Kelvin help?
+            <textarea name="message" rows="4" placeholder="Tell us about your support needs" required></textarea>
+          </label>
+          <button type="submit" class="btn glow">Send Inquiry</button>
+        </form>
+      </div>
+      <div class="container quick-ctas">
+        <div class="quick-cta glass">
+          <h4>Calendar Rescue</h4>
+          <p>Send a screenshot—Kelvin returns a polished schedule plan.</p>
+          <a class="btn ghost" href="https://wa.me/254711222572" target="_blank" rel="noopener">Send Screenshot</a>
+        </div>
+        <div class="quick-cta glass">
+          <h4>VIP Response Lane</h4>
+          <p>Get replies within 2 business hours for urgent requests.</p>
+          <a class="btn outline" href="#contact">Activate VIP</a>
+        </div>
+        <div class="quick-cta glass">
+          <h4>Inbox Detox</h4>
+          <p>We clean, tag, and systemize your inbox in one week.</p>
+          <a class="btn glow" href="#booking">Book Detox</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© 2026 Kelvin Mark. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <a href="#booking">Book</a>
+      </div>
+      <div class="social-links">
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.x.com" target="_blank" rel="noopener">X</a>
+      </div>
+    </div>
+    <div class="container footer-trust">
+      <details class="trust-note glass" id="trustNote" open>
+        <summary>Kelvin will never ask for</summary>
+        <ul>
+          <li>Passwords or 2FA codes</li>
+          <li>Crypto payments to personal wallets</li>
+          <li>Unverified links or attachments</li>
+          <li>Upfront fees without a written agreement</li>
+        </ul>
+      </details>
+    </div>
+  </footer>
+
+  <!-- Sticky CTA -->
+  <div class="sticky-cta" id="stickyCta" aria-hidden="true">
+    <div class="sticky-inner">
+      <div>
+        <strong id="stickyHeadline">Ready to reclaim your time?</strong>
+        <span id="stickySubhead">Let Kelvin build your premium support system.</span>
+      </div>
+      <div class="sticky-actions">
+        <a class="btn glow" href="#booking">Book a Call</a>
+        <a class="btn ghost" href="#pricing">View Pricing</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Surprise CTA -->
+  <div class="surprise-cta" id="surpriseCta" aria-hidden="true">
+    <div class="surprise-inner glass">
+      <div class="surprise-title">Surprise Offer</div>
+      <h4>Founder Fast-Track</h4>
+      <p>Get a private ops audit + custom workflow blueprint.</p>
+      <a class="btn glow" href="#booking">Unlock It</a>
+      <button class="surprise-close" id="surpriseClose" aria-label="Dismiss">×</button>
+    </div>
+  </div>
+
+  <!-- Gamified Spin CTA -->
+  <div class="spin-cta" id="spinCta" aria-hidden="true">
+    <div class="spin-card glass">
+      <button class="spin-close" id="spinClose" aria-label="Dismiss">×</button>
+      <div class="spin-title">Spin to Reveal</div>
+      <p>Unlock a premium onboarding bonus.</p>
+      <div class="wheel-wrap">
+        <div class="pointer"></div>
+        <div class="wheel" id="wheel"></div>
+      </div>
+      <button class="btn glow" id="spinButton" type="button">Spin Now</button>
+      <div class="spin-result" id="spinResult">Your reward appears here.</div>
+    </div>
+  </div>
+
+  <!-- Easter Egg CTA -->
+  <div class="egg-cta" id="eggCta" aria-hidden="true">
+    <div class="egg-inner glass">
+      <div class="egg-title">Hidden Drop</div>
+      <h4>Inbox Detox Sprint</h4>
+      <p>Found it. Claim a one‑week inbox reset slot.</p>
+      <a class="btn glow" href="#booking">Claim the Sprint</a>
+      <button class="egg-close" id="eggClose" aria-label="Dismiss">×</button>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp button -->
+  <a class="whatsapp" href="https://wa.me/254711222572" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <span>WhatsApp</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
