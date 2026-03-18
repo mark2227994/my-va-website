@@ -10,23 +10,17 @@ const calendlyUrl = "https://calendly.com/kelvinmark-va/30min";
 const enableAutoPopups = false;
 
 const openMenu = () => {
-  navMobile.hidden = false;
-  menuBackdrop.hidden = false;
-  requestAnimationFrame(() => {
-    navMobile.classList.add("open");
-    menuBackdrop.classList.add("visible");
-  });
+  document.body.classList.add("menu-open");
+  navMobile.classList.add("open");
+  menuBackdrop.classList.add("visible");
   navToggle.setAttribute("aria-expanded", "true");
 };
 
 const closeMenu = () => {
   navMobile.classList.remove("open");
   menuBackdrop.classList.remove("visible");
+  document.body.classList.remove("menu-open");
   navToggle.setAttribute("aria-expanded", "false");
-  setTimeout(() => {
-    navMobile.hidden = true;
-    menuBackdrop.hidden = true;
-  }, 350);
 };
 
 navToggle.addEventListener("click", () => {
