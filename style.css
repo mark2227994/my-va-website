@@ -1056,6 +1056,26 @@ blockquote {
   font-size: 1.2rem;
 }
 
+.booking-fallback {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px dashed rgba(110, 120, 255, 0.35);
+  background: rgba(10, 10, 20, 0.35);
+  width: fit-content;
+}
+
+.booking-fallback:hover,
+.booking-fallback:focus-visible {
+  color: var(--text);
+  border-color: rgba(74, 215, 255, 0.55);
+  box-shadow: 0 0 18px rgba(90, 130, 255, 0.35);
+}
+
 .calendly-inline-widget {
   width: 100%;
   min-width: 320px;
@@ -1063,7 +1083,7 @@ blockquote {
   border-radius: 18px;
   background: rgba(6, 6, 15, 0.7);
   overflow: hidden;
-  animation: bookingFade 0.7s ease;
+  animation: bookingFade 1.2s ease-out;
 }
 
 .calendly-inline-widget iframe {
@@ -1595,7 +1615,7 @@ textarea,
 @keyframes bookingFade {
   0% {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(18px);
   }
   100% {
     opacity: 1;
