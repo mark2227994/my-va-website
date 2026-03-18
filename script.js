@@ -318,7 +318,6 @@ const contactForm = document.querySelector(".form");
 const messageField = document.querySelector(".form textarea");
 const bookingSection = document.getElementById("booking");
 const priceCards = document.querySelectorAll(".price-card");
-const bookNowFloat = document.getElementById("bookNowFloat");
 const stickyVariants = [
   {
     headline: "Ready to reclaim your time?",
@@ -469,12 +468,6 @@ const openCalendlyPopup = () => {
   window.open(calendlyUrl, "_blank", "noopener");
 };
 
-if (bookNowFloat) {
-  bookNowFloat.addEventListener("click", (event) => {
-    event.preventDefault();
-    openCalendlyPopup();
-  });
-}
 
 const roiHours = document.getElementById("roiHours");
 const roiRate = document.getElementById("roiRate");
