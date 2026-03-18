@@ -73,6 +73,14 @@ img {
   position: relative;
 }
 
+#hero,
+#about,
+#services,
+#portfolio,
+#contact {
+  padding: 70px 0;
+}
+
 .section::after {
   content: "";
   position: absolute;
