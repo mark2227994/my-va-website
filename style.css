@@ -224,23 +224,27 @@ body.theme-light .nav {
 .nav-links a {
   position: relative;
   padding-bottom: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
   transition: color 0.35s ease, transform 0.35s ease, text-shadow 0.35s ease;
 }
 
-.nav-links a::after {
+.nav-links a::before {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(120deg, var(--accent), var(--accent-2));
-  transition: width 0.4s ease;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(120deg, rgba(74, 215, 255, 0.2), rgba(138, 91, 255, 0.2));
+  opacity: 0;
+  transform: scaleX(0.7);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: -1;
 }
 
-.nav-links a:hover::after,
-.nav-links a:focus-visible::after {
-  width: 100%;
+.nav-links a:hover::before,
+.nav-links a:focus-visible::before {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 .nav-links a:hover,
@@ -301,23 +305,27 @@ body.theme-light .nav {
 .nav-mobile a {
   position: relative;
   padding-bottom: 6px;
+  padding: 8px 12px;
+  border-radius: 999px;
   transition: color 0.35s ease, transform 0.35s ease, text-shadow 0.35s ease;
 }
 
-.nav-mobile a::after {
+.nav-mobile a::before {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(120deg, var(--accent), var(--accent-2));
-  transition: width 0.4s ease;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(120deg, rgba(74, 215, 255, 0.2), rgba(138, 91, 255, 0.2));
+  opacity: 0;
+  transform: scaleX(0.7);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: -1;
 }
 
-.nav-mobile a:hover::after,
-.nav-mobile a:focus-visible::after {
-  width: 100%;
+.nav-mobile a:hover::before,
+.nav-mobile a:focus-visible::before {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 .nav-mobile a:hover,
