@@ -33,9 +33,6 @@ body {
   transition: background 0.4s ease, color 0.4s ease;
 }
 
-body.menu-open {
-  overflow: hidden;
-}
 body.theme-light {
   --bg: #f6f7ff;
   --bg-soft: #ffffff;
