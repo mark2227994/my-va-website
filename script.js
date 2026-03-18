@@ -260,9 +260,9 @@ const updateSavingsBadges = (mode) => {
     if (mode === "monthly") {
       const plan = card?.dataset.plan;
       const labels = {
-        starter: "Best for Startups",
-        standard: "Most Popular",
-        premium: "Premium Access"
+        starter: "Momentum Plan",
+        standard: "Founders’ Pick",
+        premium: "Concierge Tier"
       };
       badge.textContent = labels[plan] || "Great Value";
       badge.classList.remove("hidden");
