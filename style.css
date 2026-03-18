@@ -195,13 +195,13 @@ img {
   z-index: 20;
   backdrop-filter: blur(6px);
   background: transparent;
-  border-bottom: 1px solid rgba(110, 120, 255, 0.15);
+  border-bottom: none;
 }
 
 .nav.nav-scrolled {
   box-shadow: 0 12px 40px rgba(8, 10, 30, 0.45);
-  border-bottom: 1px solid rgba(110, 120, 255, 0.35);
-  background: rgba(6, 6, 15, 0.55);
+  border-bottom: none;
+  background: transparent;
 }
 
 body.theme-light .nav {
@@ -209,7 +209,7 @@ body.theme-light .nav {
 }
 
 body.theme-light .nav.nav-scrolled {
-  background: rgba(255, 255, 255, 0.7);
+  background: transparent;
 }
 
 .nav-inner {
