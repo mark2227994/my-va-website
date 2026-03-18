@@ -193,18 +193,23 @@ img {
   position: sticky;
   top: 0;
   z-index: 20;
-  backdrop-filter: blur(10px);
-  background: rgba(6, 6, 15, 0.28);
+  backdrop-filter: blur(6px);
+  background: transparent;
   border-bottom: 1px solid rgba(110, 120, 255, 0.15);
 }
 
 .nav.nav-scrolled {
   box-shadow: 0 12px 40px rgba(8, 10, 30, 0.45);
   border-bottom: 1px solid rgba(110, 120, 255, 0.35);
+  background: rgba(6, 6, 15, 0.55);
 }
 
 body.theme-light .nav {
-  background: rgba(255, 255, 255, 0.4);
+  background: transparent;
+}
+
+body.theme-light .nav.nav-scrolled {
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .nav-inner {
@@ -234,7 +239,8 @@ body.theme-light .nav {
   padding-bottom: 6px;
   padding: 6px 12px;
   border-radius: 999px;
-  transition: color 0.35s ease, transform 0.35s ease, text-shadow 0.35s ease;
+  transition: color 0.4s ease, transform 0.4s ease, text-shadow 0.4s ease;
+  text-shadow: 0 0 12px rgba(4, 4, 10, 0.45);
 }
 
 .nav-links a::before {
@@ -315,7 +321,8 @@ body.theme-light .nav {
   padding-bottom: 6px;
   padding: 8px 12px;
   border-radius: 999px;
-  transition: color 0.35s ease, transform 0.35s ease, text-shadow 0.35s ease;
+  transition: color 0.4s ease, transform 0.4s ease, text-shadow 0.4s ease;
+  text-shadow: 0 0 12px rgba(4, 4, 10, 0.45);
 }
 
 .nav-mobile a::before {
