@@ -202,6 +202,8 @@ img {
 .nav.nav-scrolled {
   border-bottom: none;
   background: transparent;
+  transform: translateY(-6px);
+  animation-play-state: paused;
 }
 
 .nav-inner {
