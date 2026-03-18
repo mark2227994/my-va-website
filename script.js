@@ -7,6 +7,7 @@ const stickyCta = document.getElementById("stickyCta");
 const menuBackdrop = document.getElementById("menuBackdrop");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const calendlyUrl = "https://calendly.com/kelvinmark-va/30min";
+const enableAutoPopups = false;
 
 const openMenu = () => {
   navMobile.hidden = false;
@@ -360,7 +361,7 @@ if (stickyHeadline && stickySubhead) {
 
 if (surpriseCta && surpriseClose) {
   const dismissed = localStorage.getItem("surpriseCtaDismissed") === "true";
-  if (!dismissed) {
+  if (!dismissed && enableAutoPopups) {
     setTimeout(() => {
       surpriseCta.classList.add("visible");
       surpriseCta.setAttribute("aria-hidden", "false");
@@ -375,7 +376,7 @@ if (surpriseCta && surpriseClose) {
 
 if (spinCta && spinClose && spinButton && wheel && spinResult) {
   const dismissed = localStorage.getItem("spinCtaDismissed") === "true";
-  if (!dismissed) {
+  if (!dismissed && enableAutoPopups) {
     setTimeout(() => {
       spinCta.classList.add("visible");
       spinCta.setAttribute("aria-hidden", "false");
@@ -436,17 +437,19 @@ if (spinCta && spinClose && spinButton && wheel && spinResult) {
 if (eggCta && eggClose) {
   const dismissed = localStorage.getItem("eggCtaDismissed") === "true";
   const revealEgg = () => {
-    if (!dismissed) {
+    if (!dismissed && enableAutoPopups) {
       eggCta.classList.add("visible");
       eggCta.setAttribute("aria-hidden", "false");
     }
   };
-  window.addEventListener("scroll", () => {
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    if (docHeight > 0 && window.scrollY / docHeight > 0.72) {
-      revealEgg();
-    }
-  });
+  if (enableAutoPopups) {
+    window.addEventListener("scroll", () => {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight > 0 && window.scrollY / docHeight > 0.72) {
+        revealEgg();
+      }
+    });
+  }
   eggClose.addEventListener("click", () => {
     eggCta.classList.remove("visible");
     eggCta.setAttribute("aria-hidden", "true");
