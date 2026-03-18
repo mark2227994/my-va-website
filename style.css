@@ -197,6 +197,7 @@ img {
   background: transparent;
   border-bottom: none;
   animation: navFloat 6s ease-in-out infinite;
+  transition: transform 0.4s ease;
 }
 
 .nav.nav-scrolled {
