@@ -466,11 +466,7 @@ if (spotlight && !prefersReducedMotion) {
 }
 
 const openCalendlyPopup = () => {
-  if (window.Calendly && typeof window.Calendly.initPopupWidget === "function") {
-    window.Calendly.initPopupWidget({ url: calendlyUrl });
-  } else {
-    window.open(calendlyUrl, "_blank", "noopener");
-  }
+  window.open(calendlyUrl, "_blank", "noopener");
 };
 
 if (bookNowFloat) {
