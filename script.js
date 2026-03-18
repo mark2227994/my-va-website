@@ -249,6 +249,34 @@ tabButtons.forEach((button) => {
 
 const pricingPills = document.querySelectorAll(".toggle-pill");
 const priceElements = document.querySelectorAll(".price");
+const saveBadges = document.querySelectorAll(".price-save");
+
+const updateSavingsBadges = (mode) => {
+  if (!saveBadges.length) return;
+  saveBadges.forEach((badge) => {
+    const card = badge.closest(".price-card");
+    const priceEl = card?.querySelector(".price");
+    if (!priceEl) return;
+    if (mode === "monthly") {
+      const plan = card?.dataset.plan;
+      const labels = {
+        starter: "Best for Startups",
+        standard: "Most Popular",
+        premium: "Premium Access"
+      };
+      badge.textContent = labels[plan] || "Great Value";
+      badge.classList.remove("hidden");
+      return;
+    }
+    const monthly = Number(priceEl.dataset.monthly || 0);
+    const target = Number(priceEl.dataset[mode] || 0);
+    const months = mode === "quarterly" ? 3 : 12;
+    const baseline = monthly * months;
+    const savings = baseline > 0 ? Math.round(((baseline - target) / baseline) * 100) : 0;
+    badge.textContent = `Save ${savings}%`;
+    badge.classList.remove("hidden");
+  });
+};
 
 const setPricingMode = (mode) => {
   priceElements.forEach((priceEl) => {
@@ -260,6 +288,7 @@ const setPricingMode = (mode) => {
       priceEl.classList.remove("switching");
     }, 180);
   });
+  updateSavingsBadges(mode);
   localStorage.setItem("pricingMode", mode);
 };
 
@@ -283,6 +312,8 @@ if (savedPricing) {
     pill.setAttribute("aria-selected", String(isActive));
   });
   setPricingMode(savedPricing);
+} else {
+  updateSavingsBadges("monthly");
 }
 
 const setPlan = (planKey) => {

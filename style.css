@@ -1125,6 +1125,26 @@ blockquote {
   letter-spacing: 0.2px;
 }
 
+.price-save {
+  display: inline-flex;
+  justify-content: center;
+  align-self: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: var(--text);
+  background: linear-gradient(120deg, rgba(74, 215, 255, 0.25), rgba(138, 91, 255, 0.25));
+  border: 1px solid rgba(110, 120, 255, 0.35);
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.price-save.hidden {
+  display: none;
+}
+
 .pricing-toggle {
   display: flex;
   align-items: center;
