@@ -200,7 +200,6 @@ img {
 }
 
 .nav.nav-scrolled {
-  box-shadow: 0 12px 40px rgba(8, 10, 30, 0.45);
   border-bottom: none;
   background: transparent;
 }
