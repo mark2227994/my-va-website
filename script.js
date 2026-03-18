@@ -45,6 +45,12 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 820) {
+    closeMenu();
+  }
+});
+
 const updateNav = () => {
   nav.classList.toggle("nav-scrolled", window.scrollY > 20);
   if (stickyCta) {
