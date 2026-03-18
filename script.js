@@ -155,21 +155,24 @@ const ringObserver = new IntersectionObserver(
 rings.forEach((ring) => ringObserver.observe(ring));
 
 const form = document.querySelector(".form");
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  form.reset();
-  const button = form.querySelector("button");
-  const originalText = button.textContent;
-  button.textContent = "Sent — Kelvin will reply soon";
-  button.disabled = true;
-  setTimeout(() => {
-    button.textContent = originalText;
-    button.disabled = false;
-  }, 2800);
-});
+if (form) {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    form.reset();
+    const button = form.querySelector("button");
+    if (!button) return;
+    const originalText = button.textContent;
+    button.textContent = "Sent — Kelvin will reply soon";
+    button.disabled = true;
+    setTimeout(() => {
+      button.textContent = originalText;
+      button.disabled = false;
+    }, 2800);
+  });
+}
 
 const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
+const ctx = canvas ? canvas.getContext("2d") : null;
 let particles = [];
 
 const resizeCanvas = () => {
@@ -204,11 +207,14 @@ const drawParticles = () => {
   requestAnimationFrame(drawParticles);
 };
 
-resizeCanvas();
-createParticles();
-drawParticles();
+if (canvas && ctx) {
+  resizeCanvas();
+  createParticles();
+  drawParticles();
+}
 
 window.addEventListener("resize", () => {
+  if (!canvas || !ctx) return;
   resizeCanvas();
   createParticles();
 });
@@ -250,6 +256,7 @@ tabButtons.forEach((button) => {
 const pricingPills = document.querySelectorAll(".toggle-pill");
 const priceElements = document.querySelectorAll(".price");
 const saveBadges = document.querySelectorAll(".price-save");
+const pricingToggle = document.querySelector(".pricing-toggle");
 
 const updateSavingsBadges = (mode) => {
   if (!saveBadges.length) return;
@@ -292,8 +299,10 @@ const setPricingMode = (mode) => {
   localStorage.setItem("pricingMode", mode);
 };
 
-pricingPills.forEach((pill) => {
-  pill.addEventListener("click", () => {
+if (pricingToggle) {
+  pricingToggle.addEventListener("click", (event) => {
+    const pill = event.target.closest(".toggle-pill");
+    if (!pill) return;
     pricingPills.forEach((btn) => {
       btn.classList.remove("active");
       btn.setAttribute("aria-selected", "false");
@@ -302,7 +311,7 @@ pricingPills.forEach((pill) => {
     pill.setAttribute("aria-selected", "true");
     setPricingMode(pill.dataset.mode);
   });
-});
+}
 
 const savedPricing = localStorage.getItem("pricingMode");
 if (savedPricing) {
