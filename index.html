@@ -548,15 +548,15 @@
     <section id="booking" class="section">
       <div class="container">
         <div class="section-title">
-          <h2>Booking</h2>
+          <h2>Book a Call</h2>
           <p>Secure a private call with Kelvin Mark.</p>
         </div>
         <div class="glass booking-frame">
-          <iframe
-            title="Calendly booking"
-            src="https://calendly.com/kelvinmark/30min"
-            frameborder="0"
-          ></iframe>
+          <h3 class="booking-heading">Book a Call</h3>
+          <div
+            class="calendly-inline-widget"
+            data-url="https://calendly.com/kelvinmark-va/30min"
+          ></div>
         </div>
       </div>
     </section>
@@ -740,7 +740,11 @@
   <a class="whatsapp" href="https://wa.me/254112222572?text=Hello%2C%20I%27m%20interested%20in%20your%20virtual%20assistant%20services." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     <span>WhatsApp</span>
   </a>
+  <button class="book-now-float" id="bookNowFloat" type="button" aria-label="Book now">
+    Book Now
+  </button>
 
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -5,6 +5,8 @@ const themeToggle = document.getElementById("themeToggle");
 const nav = document.querySelector(".nav");
 const stickyCta = document.getElementById("stickyCta");
 const menuBackdrop = document.getElementById("menuBackdrop");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const calendlyUrl = "https://calendly.com/kelvinmark-va/30min";
 
 const openMenu = () => {
   navMobile.hidden = false;
@@ -315,6 +317,7 @@ const contactForm = document.querySelector(".form");
 const messageField = document.querySelector(".form textarea");
 const bookingSection = document.getElementById("booking");
 const priceCards = document.querySelectorAll(".price-card");
+const bookNowFloat = document.getElementById("bookNowFloat");
 const stickyVariants = [
   {
     headline: "Ready to reclaim your time?",
@@ -459,6 +462,21 @@ if (spotlight && !prefersReducedMotion) {
   });
 }
 
+const openCalendlyPopup = () => {
+  if (window.Calendly && typeof window.Calendly.initPopupWidget === "function") {
+    window.Calendly.initPopupWidget({ url: calendlyUrl });
+  } else {
+    window.open(calendlyUrl, "_blank", "noopener");
+  }
+};
+
+if (bookNowFloat) {
+  bookNowFloat.addEventListener("click", (event) => {
+    event.preventDefault();
+    openCalendlyPopup();
+  });
+}
+
 const roiHours = document.getElementById("roiHours");
 const roiRate = document.getElementById("roiRate");
 const roiWeeks = document.getElementById("roiWeeks");
@@ -522,7 +540,6 @@ if (roiCalc) {
 }
 
 const typingText = document.getElementById("typingText");
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const queuePhrases = [
   "Drafting executive briefing...",
   "Optimizing inbox workflows...",
@@ -603,4 +620,3 @@ const syncTrustNote = () => {
 
 syncTrustNote();
 window.addEventListener("resize", syncTrustNote);
-
